@@ -1,0 +1,28 @@
+# Local KB article
+/Internationalization in NextJs.md
+
+# Dependencies
+/node_modules/
+
+# Next.js build output
+/.next/
+/out/
+/build/
+
+# Generated TypeScript files
+/next-env.d.ts
+*.tsbuildinfo
+
+# Local environment files
+.env*
+!.env.example
+!.env.sample
+
+# Logs and test output
+*.log
+/coverage/
+
+# Deployment and OS files
+/.vercel/
+.DS_Store
+Thumbs.db

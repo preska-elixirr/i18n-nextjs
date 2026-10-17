@@ -1,0 +1,9 @@
+{
+  "Home": {
+    "title": "Vaš radni prostor",
+    "description": "Upravljajte dokumentima svog tima na jednom mjestu.",
+    "documents": "{count, plural, =0 {Nema dokumenata} one {# dokument} few {# dokumenta} other {# dokumenata}}"
+  },
+  "Language": {"label": "Jezik"},
+  "ClientDemo": {"title": "Primjer na klijentu", "label": "Jezik", "add": "Dodaj jedan", "count": "Broj: {count}"}
+}

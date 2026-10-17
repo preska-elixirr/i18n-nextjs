@@ -1,0 +1,9 @@
+{
+  "Home": {
+    "title": "Your workspace",
+    "description": "Manage your team's documents in one place.",
+    "documents": "{count, plural, =0 {No documents} one {# document} other {# documents}}"
+  },
+  "Language": {"label": "Language"},
+  "ClientDemo": {"title": "Client-side example", "label": "Language", "add": "Add one", "count": "Count: {count}"}
+}
