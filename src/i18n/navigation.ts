@@ -1,5 +1,5 @@
-import {createNavigation} from 'next-intl/navigation';
-import {routing} from './routing';
+import { createNavigation } from "next-intl/navigation";
+import { routing } from "./routing";
 
-export const {Link, usePathname, useRouter, getPathname, redirect} =
+export const { Link, usePathname, useRouter, getPathname, redirect } =
   createNavigation(routing);

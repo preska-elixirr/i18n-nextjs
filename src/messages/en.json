@@ -1,9 +1,280 @@
 {
-  "Home": {
-    "title": "Your workspace",
-    "description": "Manage your team's documents in one place.",
-    "documents": "{count, plural, =0 {No documents} one {# document} other {# documents}}"
+  "Nav": {
+    "announcement": "A little less scrolling. A little more making.",
+    "navigation": "Main navigation",
+    "workshops": "Workshops",
+    "studio": "Our studio",
+    "contact": "Say hello",
+    "book": "Find your place",
+    "language": "Language",
+    "switching": "Changing language",
+    "menu": "Open menu",
+    "closeMenu": "Close menu",
+    "guide": "Care guide",
+    "planner": "Creative planner"
   },
-  "Language": {"label": "Language"},
-  "ClientDemo": {"title": "Client-side example", "label": "Language", "add": "Add one", "count": "Count: {count}"}
+  "Home": {
+    "metaTitle": "Creative workshops in Zagreb",
+    "metaDescription": "Make a little time for yourself. Pottery, printmaking and textile workshops in a welcoming Zagreb studio.",
+    "explore": "Explore workshops",
+    "beginners": "Beginners very welcome",
+    "smallGroups": "Small groups.",
+    "humanConnection": "Good company.",
+    "heroAlt": "A ceramic artist shaping a bowl by hand at a pottery wheel",
+    "madeByYou": "MADE SLOWLY.\nMADE BY YOU.",
+    "nextWorkshop": "YOUR NEXT LITTLE ADVENTURE",
+    "valueOne": "Made with your hands",
+    "valueTwo": "Room for everyone",
+    "valueThree": "Coffee always included",
+    "valueFour": "Come curious. Leave happy.",
+    "studioEyebrow": "A PLACE TO PAUSE",
+    "studioAlt": "Warm studio shelves filled with handmade ceramic vessels",
+    "signature": "Marta & the Atelier team",
+    "signatureRole": "YOUR HOSTS, FELLOW MAKERS",
+    "visit": "Come find us",
+    "bookingEyebrow": "SAVE A LITTLE TIME FOR YOURSELF",
+    "bookingTitle": "Your seat at\nthe table.",
+    "bookingDescription": "Pick something that catches your eye. We will take care of the materials, the coffee and making you feel at home.",
+    "benefitOne": "All materials and tools included",
+    "benefitTwo": "Small groups, personal guidance",
+    "benefitThree": "Something handmade to take home",
+    "questions": "A question before you join?",
+    "faqEyebrow": "GOOD TO KNOW",
+    "faqTitle": "A few things\nyou might wonder.",
+    "faq": {
+      "first": {
+        "question": "I have never done this before. Is that okay?",
+        "answer": "Absolutely. Every workshop starts with the basics, and your host is there to guide you. Curiosity is the only thing you need to bring."
+      },
+      "bring": {
+        "question": "What should I bring?",
+        "answer": "Just yourself and clothes you do not mind getting a little creative in. Materials, tools, an apron, coffee and tea are all included."
+      },
+      "cancel": {
+        "question": "What if my plans change?",
+        "answer": "Reply to the studio at least 48 hours before your workshop. We will help you move your request to another available session."
+      }
+    }
+  },
+  "Workshops": {
+    "eyebrow": "UPCOMING AT THE STUDIO",
+    "title": "Make room for making.",
+    "description": "A few hours away from the everyday.\nA new skill. Something that is yours.",
+    "categories": "Filter by craft",
+    "all": "All workshops",
+    "clay": "Clay & ceramics",
+    "paper": "Paper & print",
+    "textile": "Textile & thread",
+    "search": "Find a workshop",
+    "person": "person",
+    "details": "Take a look",
+    "empty": "Nothing here just yet.",
+    "emptyHint": "Try another craft or a different search.",
+    "reset": "Show all workshops",
+    "count": "{count, plural, one {# workshop to explore} other {# workshops to explore}}"
+  },
+  "Booking": {
+    "choose": "Find your workshop",
+    "chooseHint": "A good place to start something new.",
+    "workshop": "Workshop",
+    "selectWorkshop": "Choose your workshop",
+    "details": "A little about you",
+    "detailsHint": "So we can save you a place.",
+    "name": "Full name",
+    "namePlaceholder": "Your name",
+    "email": "Email address",
+    "guests": "Places",
+    "people": "{count, plural, one {# person} other {# people}}",
+    "groupHint": "Coming with a friend? Book up to four places together.",
+    "note": "Anything we should know?",
+    "optional": "(optional)",
+    "notePlaceholder": "Accessibility needs, questions, or a little hello…",
+    "consent": "I agree that the studio may use my details to manage this booking request.",
+    "total": "Workshop total",
+    "submit": "Request your place",
+    "sending": "Saving your request…",
+    "paymentHint": "No payment now. Your place is confirmed by the studio.",
+    "successLabel": "A LITTLE SOMETHING TO LOOK FORWARD TO",
+    "success": "Your request is in.",
+    "successDescription": "We have saved your booking request. Keep your reference below; the studio will review availability before confirming your place.",
+    "another": "Make another request",
+    "errors": {
+      "invalid": "Please check the form and try again.",
+      "unavailable": "This workshop is no longer available. Please choose another.",
+      "limit": "You have made several requests today. Please contact the studio directly.",
+      "server": "We could not save your request. Your details are still here; please try again."
+    }
+  },
+  "Validation": {
+    "workshop": "Please choose a workshop.",
+    "name": "Please enter your full name (2–100 characters).",
+    "email": "Please enter a valid email address.",
+    "guests": "Please choose between one and four places.",
+    "note": "Please keep your note under 1,000 characters.",
+    "consent": "Please agree so we can manage your request."
+  },
+  "Detail": {
+    "back": "All workshops",
+    "clay": "CLAY & CERAMICS",
+    "paper": "PAPER & PRINT",
+    "textile": "TEXTILE & THREAD",
+    "about": "What we will make",
+    "included": "Your afternoon includes",
+    "reserve": "A PLACE AT THE TABLE",
+    "join": "Come make with us."
+  },
+  "Footer": {
+    "intro": "A small creative studio.\nA little space to make something yours.",
+    "stayClose": "LET’S KEEP IN TOUCH",
+    "newsletter": "Good things, occasionally.",
+    "made": "Made with care in Zagreb.",
+    "cms": "Studio admin"
+  },
+  "Newsletter": {
+    "email": "Email address",
+    "placeholder": "Your email address",
+    "submit": "Subscribe to studio news",
+    "consent": "Yes, send me occasional workshop news. I can unsubscribe by contacting the studio.",
+    "consentError": "Please agree to receive studio news.",
+    "invalid": "Please enter a valid email address.",
+    "success": "You are on the list. See you in your inbox.",
+    "error": "We could not save your subscription. Please try again."
+  },
+  "NotFound": {
+    "title": "This little corner is empty.",
+    "description": "The workshop may have moved or is not available in this language.",
+    "back": "Back to the studio"
+  },
+  "ClientDemo": {
+    "title": "Client-side example",
+    "label": "Language",
+    "add": "Add one",
+    "count": "Count: {count}"
+  },
+  "Catalog": {
+    "metaTitle": "All creative workshops",
+    "eyebrow": "COME CURIOUS",
+    "title": "Find your next small adventure.",
+    "description": "Clay, paper or a little thread. Choose a workshop, meet your host, and leave with something made by you."
+  },
+  "StudioPage": {
+    "metaTitle": "Our Zagreb studio",
+    "eyebrow": "A PLACE FOR YOUR CREATIVE SIDE",
+    "title": "The table is always open.",
+    "intro": "A small studio in the heart of Zagreb, built around the simple pleasure of making things together.",
+    "imageAlt": "Handmade ceramic vessels on a studio shelf",
+    "visit": "Come say hello",
+    "cta": "Meet us at a workshop",
+    "care": {
+      "title": "A little care.",
+      "description": "Thoughtful materials, patient guidance and space to try again. There is no rush to get it right."
+    },
+    "curiosity": {
+      "title": "A little curiosity.",
+      "description": "No experience required. We believe a good question is a better starting point than a perfect technique."
+    },
+    "company": {
+      "title": "A little company.",
+      "description": "A shared table, warm coffee and a conversation that has nothing to do with your inbox."
+    }
+  },
+  "Guide": {
+    "metaTitle": "Care for your handmade pieces",
+    "eyebrow": "GOOD THINGS ARE WORTH KEEPING",
+    "title": "Made by you.\nKept for years.",
+    "intro": "A few simple habits help handmade pieces settle into everyday life. Here is how to look after what you bring home.",
+    "ceramics": {
+      "title": "Everyday ceramics",
+      "intro": "Your cup or bowl gets stronger in the kiln, but a little gentleness still goes a long way.",
+      "imageAlt": "A ceramic vessel being shaped by hand",
+      "one": "Let a freshly washed piece dry fully before putting it away.",
+      "two": "Avoid sudden changes from very hot to very cold.",
+      "three": "Follow your host’s glaze-specific advice for food, microwaves and dishwashers."
+    },
+    "prints": {
+      "title": "Paper & prints",
+      "intro": "Paper loves a calm spot, away from moisture and strong direct light.",
+      "imageAlt": "Green leaves inspiring botanical printmaking",
+      "one": "Handle prints with clean, dry hands and support both edges.",
+      "two": "Choose a frame that keeps the print away from the glass.",
+      "three": "Display it out of direct sunlight to help preserve the colours."
+    },
+    "textiles": {
+      "title": "Thread & textiles",
+      "intro": "Small stitches can last a long time with gentle cleaning and thoughtful storage.",
+      "imageAlt": "An embroidery hoop and colourful threads",
+      "one": "Spot-clean first, and test the thread’s colourfastness before washing.",
+      "two": "Avoid scrubbing and wringing; reshape gently while damp.",
+      "three": "Store your piece dry, away from prolonged direct light."
+    },
+    "calloutEyebrow": "MAKE SOMETHING ELSE",
+    "calloutTitle": "Your next idea starts here.",
+    "calloutLink": "Plan a creative afternoon"
+  },
+  "Planner": {
+    "metaTitle": "Your creative afternoon planner",
+    "eyebrow": "A LITTLE ROOM TO EXPERIMENT",
+    "title": "An afternoon,\nyour way.",
+    "intro": "Pick a craft, invite a few friends and sketch out a small creative plan. Change the language whenever you like; your choices stay right here.",
+    "loading": "Opening your creative planner…",
+    "chooseCraft": "CHOOSE YOUR CRAFT",
+    "projectName": "Give your project a name",
+    "namePlaceholder": "Sunday at the kitchen table",
+    "who": "Who is joining?",
+    "peopleHint": "From a quiet afternoon to a table of eight.",
+    "fewer": "One fewer person",
+    "more": "One more person",
+    "people": "People in your plan",
+    "peopleCount": "{count, plural, one {# person} other {# people}}",
+    "tip": "Try the language menu after making a few choices. Your plan stays put.",
+    "yourPlan": "YOUR LITTLE PLAN",
+    "defaultName": "A creative afternoon",
+    "kitIncludes": "For each person",
+    "estimate": "Material estimate",
+    "estimateHint": "An indicative materials budget, not a workshop booking or a payment.",
+    "download": "Download your plan",
+    "downloaded": "Your plan has been downloaded.",
+    "localHint": "Your draft stays in this browser tab.",
+    "crafts": {
+      "clay": {
+        "title": "A little clay",
+        "description": "Slow hands, simple shapes and a small object to call your own.",
+        "one": "Air-dry modelling clay",
+        "two": "A basic shaping tool",
+        "three": "Paper to protect the table"
+      },
+      "paper": {
+        "title": "A little paper",
+        "description": "Play with shapes, textures and nature-inspired marks.",
+        "one": "A small pack of art paper",
+        "two": "Water-based ink and a sponge",
+        "three": "Leaves for making impressions"
+      },
+      "textile": {
+        "title": "A little thread",
+        "description": "A few patient stitches can turn a scrap of linen into a story.",
+        "one": "A small embroidery hoop",
+        "two": "Linen, thread and a needle",
+        "three": "A simple stitch guide"
+      }
+    }
+  },
+  "Rendering": {
+    "summary": "How does this page change language?",
+    "renderedAt": "Rendered for this request:",
+    "builtAt": "Generated at build time:",
+    "url": "Default mode: the language is hidden in the URL. No full document reload is needed.",
+    "server": {
+      "badge": "SSR · Payload CMS",
+      "description": "This page reads translated content from Payload on the server for each request. Choosing another language uses App Router navigation to obtain the matching server output; the visible path stays the same."
+    },
+    "static": {
+      "badge": "SSG · Build-time content",
+      "description": "English and Croatian versions are generated at build time. Choosing another language navigates to the matching prebuilt route. Its route payload may be fetched if it is not already cached, but the content is not generated from the CMS per request."
+    },
+    "client": {
+      "badge": "CSR · Browser-only planner",
+      "description": "The planner body is loaded with ssr: false and rendered in the browser. Both message catalogs are already available. Changing language updates React context, document language and title locally, preserving your plan without requesting new server output. The initial header, footer and loading shell are still prerendered."
+    }
+  }
 }

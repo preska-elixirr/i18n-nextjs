@@ -1,0 +1,95 @@
+{
+  "studio": {
+    "en": {
+      "eyebrow": "A CREATIVE LITTLE CORNER OF ZAGREB",
+      "heroTitle": "A little time.\nSomething\nhandmade.",
+      "heroDescription": "Put your phone away. Get your hands a little messy. Find the joy in making something, just because.",
+      "storyTitle": "More than a workshop.\nA moment for yourself.",
+      "story": "Atelier started with a table, a pot of coffee and the belief that everyone has a creative side. Today, our little studio brings people together over clay, paper and thread.\n\nThere is no perfect result to chase here. Just patient guidance, good conversation and the quiet satisfaction of making something with your own hands."
+    },
+    "hr": {
+      "eyebrow": "MALI KREATIVNI KUTAK ZAGREBA",
+      "heroTitle": "Malo vremena.\nNešto stvoreno\nvašim rukama.",
+      "heroDescription": "Odložite mobitel. Zaprljajte ruke. Ponovno otkrijte užitak stvaranja nečega, jednostavno zato što vas veseli.",
+      "storyTitle": "Više od radionice.\nTrenutak za sebe.",
+      "story": "Atelier je počeo sa stolom, kavom i uvjerenjem da svatko ima kreativnu stranu. Danas naš mali studio okuplja ljude oko gline, papira i konca.\n\nOvdje ne jurimo savršen rezultat. Nudimo strpljivo vodstvo, dobar razgovor i tiho zadovoljstvo stvaranja vlastitim rukama."
+    }
+  },
+  "workshops": [
+    {
+      "slug": "slow-sunday-ceramics",
+      "category": "clay",
+      "image": "/images/clay.jpg",
+      "duration": 150,
+      "price": 65,
+      "instructor": "Marta Kovač",
+      "days": 8,
+      "en": {
+        "title": "Slow Sunday ceramics",
+        "description": "A warm cup, a quiet morning, and a little clay. Shape your own everyday favourite.",
+        "details": "Learn hand-building techniques as you shape a cup or a small bowl. Marta will show you how to pinch, coil and add texture, with plenty of room to follow your own ideas.\n\nWe will glaze and fire your piece after the workshop. Your finished ceramic will be ready to collect in three to four weeks.",
+        "included": "Clay, tools and an apron\nGlazing and two kiln firings\nCoffee, tea and a homemade treat\nA small group and personal guidance",
+        "imageAlt": "Hands shaping a ceramic vessel on a pottery wheel",
+        "level": "For beginners and curious hands of every kind."
+      },
+      "hr": {
+        "title": "Nedjelja uz keramiku",
+        "description": "Topla šalica, mirno jutro i malo gline. Oblikujte svoj novi omiljeni predmet.",
+        "details": "Upoznajte tehnike ručnog oblikovanja dok izrađujete šalicu ili malu zdjelu. Marta će vam pokazati oblikovanje prstima, valjčićima i dodavanje teksture, uz dovoljno prostora za vaše ideje.\n\nNakon radionice glazirat ćemo i ispeći vaš rad. Gotova keramika bit će spremna za preuzimanje za tri do četiri tjedna.",
+        "included": "Glina, alati i pregača\nGlaziranje i dva pečenja\nKava, čaj i domaća slastica\nMala grupa i osobno vodstvo",
+        "imageAlt": "Ruke oblikuju keramičku posudu na lončarskom kolu",
+        "level": "Za početnike i sve znatiželjne ruke."
+      }
+    },
+    {
+      "slug": "botanical-printmaking",
+      "category": "paper",
+      "image": "/images/paper.jpg",
+      "duration": 180,
+      "price": 55,
+      "instructor": "Luka Babić",
+      "days": 14,
+      "en": {
+        "title": "Botanical impressions",
+        "description": "Leaves, ink and beautiful imperfections. Make a set of prints inspired by nature.",
+        "details": "Discover the satisfying rhythm of printmaking with leaves and hand-carved shapes. Luka will guide you through composition, inking and printing on beautiful heavyweight paper.\n\nYou will leave with a collection of original prints and the confidence to keep experimenting at home.",
+        "included": "Printing inks, rollers and tools\nA selection of art papers\nBotanical materials and reference books\nCoffee, tea and your finished prints",
+        "imageAlt": "Green leaves offering inspiration for botanical prints",
+        "level": "No drawing or printmaking experience needed."
+      },
+      "hr": {
+        "title": "Botanički otisci",
+        "description": "Lišće, tinta i lijepe nesavršenosti. Izradite grafike nadahnute prirodom.",
+        "details": "Otkrijte ritam grafike uz lišće i ručno rezbarene oblike. Luka će vas voditi kroz kompoziciju, nanošenje boje i otiskivanje na kvalitetnom papiru.\n\nKući ćete ponijeti kolekciju originalnih otisaka i samopouzdanje za daljnje eksperimentiranje.",
+        "included": "Grafičke boje, valjci i alati\nIzbor kvalitetnih papira\nBiljni materijali i knjige za inspiraciju\nKava, čaj i vaši otisci",
+        "imageAlt": "Zeleni listovi kao inspiracija za botaničke otiske",
+        "level": "Iskustvo u crtanju ili grafici nije potrebno."
+      }
+    },
+    {
+      "slug": "stitch-a-little-story",
+      "category": "textile",
+      "image": "/images/textile.jpg",
+      "duration": 150,
+      "price": 48,
+      "instructor": "Iva Horvat",
+      "days": 21,
+      "en": {
+        "title": "Stitch a little story",
+        "description": "Slow down, one stitch at a time. Turn a simple piece of linen into something personal.",
+        "details": "An introduction to embroidery for anyone who wants a slower kind of afternoon. Iva will introduce a handful of versatile stitches and help you design a small motif of your own.\n\nYour hoop, needle and remaining threads go home with you, so the story can continue.",
+        "included": "Linen, an embroidery hoop and needle\nA palette of colourful threads\nA stitch guide to take home\nCoffee, tea and patient company",
+        "imageAlt": "Colourful embroidery threads and natural fabric ready for a textile workshop",
+        "level": "A gentle introduction. All experience levels welcome."
+      },
+      "hr": {
+        "title": "Izvezite malu priču",
+        "description": "Usporite, bod po bod. Pretvorite komad lana u nešto osobno.",
+        "details": "Uvod u vez za sve koji žele sporije poslijepodne. Iva će vam pokazati nekoliko svestranih bodova i pomoći osmisliti vlastiti mali motiv.\n\nObruč, iglu i preostale konce nosite kući kako bi se priča nastavila.",
+        "included": "Lan, obruč za vez i igla\nPaleta šarenih konaca\nVodič za bodove koji nosite kući\nKava, čaj i strpljivo društvo",
+        "imageAlt": "Šareni konci za vez i prirodna tkanina pripremljeni za tekstilnu radionicu",
+        "level": "Nježan uvod. Dobrodošli su svi, bez obzira na iskustvo."
+      }
+    }
+  ]
+}

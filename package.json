@@ -1,21 +1,55 @@
 {
-  "name": "kb-nextjs-i18n-example",
+  "name": "atelier-nextjs-i18n",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "generate:types": "payload generate:types",
+    "generate:importmap": "payload generate:importmap",
+    "seed": "tsx --env-file=.env scripts/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node scripts/run-e2e.mjs",
+    "test:e2e": "node scripts/run-e2e.mjs",
+    "migrate": "payload migrate"
   },
   "dependencies": {
-    "next": "16.4.1",
+    "@hookform/resolvers": "5.9.2",
+    "@payloadcms/db-sqlite": "3.91.0",
+    "@payloadcms/next": "3.91.0",
+    "@payloadcms/richtext-lexical": "3.91.0",
+    "@payloadcms/translations": "3.91.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "graphql": "16.14.2",
+    "lucide-react": "1.59.0",
+    "next": "16.4.2",
     "next-intl": "4.14.9",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "payload": "3.91.0",
+    "radix-ui": "1.8.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-hook-form": "7.90.0",
+    "sharp": "0.35.5",
+    "tailwind-merge": "3.7.0",
+    "zod": "4.6.7"
   },
   "devDependencies": {
-    "@types/node": "^24.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "typescript": "^5.9.0"
+    "@playwright/test": "1.64.1",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  },
+  "type": "module",
+  "overrides": {
+    "sass": "1.105.2",
+    "dompurify": "3.4.17",
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.28.2"
+    }
   }
 }

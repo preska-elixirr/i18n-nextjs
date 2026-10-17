@@ -1,9 +1,280 @@
 {
-  "Home": {
-    "title": "Vaš radni prostor",
-    "description": "Upravljajte dokumentima svog tima na jednom mjestu.",
-    "documents": "{count, plural, =0 {Nema dokumenata} one {# dokument} few {# dokumenta} other {# dokumenata}}"
+  "Nav": {
+    "announcement": "Manje skrolanja. Više stvaranja.",
+    "navigation": "Glavna navigacija",
+    "workshops": "Radionice",
+    "studio": "Naš studio",
+    "contact": "Javite nam se",
+    "book": "Pronađite svoje mjesto",
+    "language": "Jezik",
+    "switching": "Promjena jezika",
+    "menu": "Otvori izbornik",
+    "closeMenu": "Zatvori izbornik",
+    "guide": "Vodič za njegu",
+    "planner": "Kreativni planer"
   },
-  "Language": {"label": "Jezik"},
-  "ClientDemo": {"title": "Primjer na klijentu", "label": "Jezik", "add": "Dodaj jedan", "count": "Broj: {count}"}
+  "Home": {
+    "metaTitle": "Kreativne radionice u Zagrebu",
+    "metaDescription": "Odvojite malo vremena za sebe. Keramika, grafika i tekstil u ugodnom zagrebačkom studiju.",
+    "explore": "Istražite radionice",
+    "beginners": "Početnici su dobrodošli",
+    "smallGroups": "Male grupe.",
+    "humanConnection": "Dobro društvo.",
+    "heroAlt": "Keramičarka rukama oblikuje zdjelu na lončarskom kolu",
+    "madeByYou": "BEZ ŽURBE.\nVAŠIM RUKAMA.",
+    "nextWorkshop": "VAŠA SLJEDEĆA MALA AVANTURA",
+    "valueOne": "Stvoreno vašim rukama",
+    "valueTwo": "Mjesto za svakoga",
+    "valueThree": "Kava je uvijek uključena",
+    "valueFour": "Dođite znatiželjni. Otiđite sretni.",
+    "studioEyebrow": "MJESTO ZA PREDAH",
+    "studioAlt": "Police toplog studija ispunjene ručno izrađenim keramičkim posudama",
+    "signature": "Marta i Atelier tim",
+    "signatureRole": "VAŠI DOMAĆINI I KOLEGE KREATIVCI",
+    "visit": "Posjetite nas",
+    "bookingEyebrow": "ODVOJITE MALO VREMENA ZA SEBE",
+    "bookingTitle": "Vaše mjesto\nza stolom.",
+    "bookingDescription": "Odaberite nešto što vas privlači. Mi ćemo se pobrinuti za materijale, kavu i to da se osjećate kao kod kuće.",
+    "benefitOne": "Sav materijal i alat su uključeni",
+    "benefitTwo": "Male grupe i osobno vodstvo",
+    "benefitThree": "Vaš ručni rad koji nosite kući",
+    "questions": "Imate pitanje prije dolaska?",
+    "faqEyebrow": "DOBRO JE ZNATI",
+    "faqTitle": "Možda se\npitate…",
+    "faq": {
+      "first": {
+        "question": "Nikad nisam radio/la nešto slično. Mogu li doći?",
+        "answer": "Naravno. Svaka radionica počinje od osnova, a voditelj je tu da vam pomogne. Dovoljno je ponijeti znatiželju."
+      },
+      "bring": {
+        "question": "Što trebam ponijeti?",
+        "answer": "Samo sebe i odjeću kojoj ne smeta malo kreativnog nereda. Materijali, alati, pregača, kava i čaj su uključeni."
+      },
+      "cancel": {
+        "question": "Što ako mi se planovi promijene?",
+        "answer": "Javite nam se barem 48 sati prije radionice. Pomoći ćemo vam prebaciti prijavu na drugi slobodan termin."
+      }
+    }
+  },
+  "Workshops": {
+    "eyebrow": "USKORO U STUDIJU",
+    "title": "Napravite mjesta za stvaranje.",
+    "description": "Nekoliko sati izvan svakodnevice.\nNova vještina. Nešto samo vaše.",
+    "categories": "Filtrirajte po tehnici",
+    "all": "Sve radionice",
+    "clay": "Glina i keramika",
+    "paper": "Papir i grafika",
+    "textile": "Tekstil i konac",
+    "search": "Pronađite radionicu",
+    "person": "osobi",
+    "details": "Pogledajte više",
+    "empty": "Zasad nema rezultata.",
+    "emptyHint": "Pokušajte s drugom tehnikom ili pojmom.",
+    "reset": "Prikaži sve radionice",
+    "count": "{count, plural, one {# radionica za istraživanje} few {# radionice za istraživanje} other {# radionica za istraživanje}}"
+  },
+  "Booking": {
+    "choose": "Pronađite svoju radionicu",
+    "chooseHint": "Dobro mjesto za nešto novo.",
+    "workshop": "Radionica",
+    "selectWorkshop": "Odaberite radionicu",
+    "details": "Nešto o vama",
+    "detailsHint": "Da vam možemo sačuvati mjesto.",
+    "name": "Ime i prezime",
+    "namePlaceholder": "Vaše ime i prezime",
+    "email": "E-adresa",
+    "guests": "Broj mjesta",
+    "people": "{count, plural, one {# osoba} few {# osobe} other {# osoba}}",
+    "groupHint": "Dolazite s prijateljima? Zajedno prijavite do četiri osobe.",
+    "note": "Trebamo li još nešto znati?",
+    "optional": "(neobavezno)",
+    "notePlaceholder": "Potrebe za pristupačnost, pitanja ili mali pozdrav…",
+    "consent": "Pristajem da studio koristi moje podatke za obradu ove prijave.",
+    "total": "Ukupno za radionicu",
+    "submit": "Pošaljite prijavu",
+    "sending": "Spremamo prijavu…",
+    "paymentHint": "Bez plaćanja sada. Studio naknadno potvrđuje mjesto.",
+    "successLabel": "NEŠTO LIJEPO ČEMU SE MOŽETE VESELITI",
+    "success": "Vaša je prijava stigla.",
+    "successDescription": "Spremili smo vašu prijavu. Sačuvajte oznaku u nastavku; studio će provjeriti dostupnost prije potvrde mjesta.",
+    "another": "Pošaljite novu prijavu",
+    "errors": {
+      "invalid": "Provjerite podatke i pokušajte ponovno.",
+      "unavailable": "Ova radionica više nije dostupna. Odaberite drugu.",
+      "limit": "Danas ste poslali nekoliko prijava. Javite se izravno studiju.",
+      "server": "Nismo uspjeli spremiti prijavu. Podaci su sačuvani; pokušajte ponovno."
+    }
+  },
+  "Validation": {
+    "workshop": "Odaberite radionicu.",
+    "name": "Unesite ime i prezime (2–100 znakova).",
+    "email": "Unesite ispravnu e-adresu.",
+    "guests": "Odaberite između jednog i četiri mjesta.",
+    "note": "Bilješka može imati najviše 1.000 znakova.",
+    "consent": "Potvrdite pristanak kako bismo obradili prijavu."
+  },
+  "Detail": {
+    "back": "Sve radionice",
+    "clay": "GLINA I KERAMIKA",
+    "paper": "PAPIR I GRAFIKA",
+    "textile": "TEKSTIL I KONAC",
+    "about": "Što ćemo stvarati",
+    "included": "U vaše poslijepodne uključeni su",
+    "reserve": "MJESTO ZA STOLOM",
+    "join": "Stvarajte s nama."
+  },
+  "Footer": {
+    "intro": "Mali kreativni studio.\nMalo prostora za nešto samo vaše.",
+    "stayClose": "OSTANIMO U KONTAKTU",
+    "newsletter": "Povremeno, nešto lijepo.",
+    "made": "Stvoreno s pažnjom u Zagrebu.",
+    "cms": "Studio administracija"
+  },
+  "Newsletter": {
+    "email": "E-adresa",
+    "placeholder": "Vaša e-adresa",
+    "submit": "Prijavite se na novosti",
+    "consent": "Želim povremene novosti o radionicama. Mogu se odjaviti javljanjem studiju.",
+    "consentError": "Potvrdite da želite primati novosti.",
+    "invalid": "Unesite ispravnu e-adresu.",
+    "success": "Na popisu ste. Vidimo se u vašem sandučiću.",
+    "error": "Nismo uspjeli spremiti prijavu. Pokušajte ponovno."
+  },
+  "NotFound": {
+    "title": "Ovaj je kutak prazan.",
+    "description": "Radionica je možda premještena ili nije dostupna na ovom jeziku.",
+    "back": "Povratak u studio"
+  },
+  "ClientDemo": {
+    "title": "Primjer na klijentu",
+    "label": "Jezik",
+    "add": "Dodaj jedan",
+    "count": "Broj: {count}"
+  },
+  "Catalog": {
+    "metaTitle": "Sve kreativne radionice",
+    "eyebrow": "DOĐITE ZNATIŽELJNI",
+    "title": "Pronađite svoju sljedeću malu avanturu.",
+    "description": "Glina, papir ili malo konca. Odaberite radionicu, upoznajte voditelja i otiđite s nečim stvorenim vašim rukama."
+  },
+  "StudioPage": {
+    "metaTitle": "Naš zagrebački studio",
+    "eyebrow": "MJESTO ZA VAŠU KREATIVNU STRANU",
+    "title": "Za našim stolom ima mjesta.",
+    "intro": "Mali studio u srcu Zagreba, nastao oko jednostavnog užitka zajedničkog stvaranja.",
+    "imageAlt": "Ručno izrađene keramičke posude na polici studija",
+    "visit": "Svratite i javite nam se",
+    "cta": "Vidimo se na radionici",
+    "care": {
+      "title": "Malo pažnje.",
+      "description": "Pažljivo odabrani materijali, strpljivo vodstvo i prostor za novi pokušaj. Nigdje nam se ne žuri."
+    },
+    "curiosity": {
+      "title": "Malo znatiželje.",
+      "description": "Iskustvo nije potrebno. Vjerujemo da je dobro pitanje bolji početak od savršene tehnike."
+    },
+    "company": {
+      "title": "Malo društva.",
+      "description": "Zajednički stol, topla kava i razgovor koji nema veze s vašim e-mailovima."
+    }
+  },
+  "Guide": {
+    "metaTitle": "Briga o vašim ručnim radovima",
+    "eyebrow": "LIJEPE STVARI VRIJEDI SAČUVATI",
+    "title": "Vaših ruku djelo.\nZa godine koje dolaze.",
+    "intro": "Nekoliko jednostavnih navika pomaže ručnim radovima da postanu dio svakodnevice. Evo kako se brinuti o onome što ponesete kući.",
+    "ceramics": {
+      "title": "Keramika za svaki dan",
+      "intro": "Vaša šalica ili zdjela očvrsne u peći, ali malo nježnosti uvijek dobro dođe.",
+      "imageAlt": "Keramička posuda koju oblikuju ruke",
+      "one": "Opranu keramiku pustite da se potpuno osuši prije spremanja.",
+      "two": "Izbjegavajte nagle promjene iz vrlo toplog u vrlo hladno.",
+      "three": "Slijedite upute voditelja o glazuri, hrani, mikrovalnoj pećnici i perilici."
+    },
+    "prints": {
+      "title": "Papir i grafike",
+      "intro": "Papir voli mirno mjesto, bez vlage i jakog izravnog svjetla.",
+      "imageAlt": "Zeleni listovi kao inspiracija za botaničke otiske",
+      "one": "Otiske primajte čistim, suhim rukama i poduprite oba ruba.",
+      "two": "Odaberite okvir koji drži otisak odvojen od stakla.",
+      "three": "Izbjegavajte izravno sunce kako bi boje dulje ostale postojane."
+    },
+    "textiles": {
+      "title": "Konac i tekstil",
+      "intro": "Mali bodovi dugo traju uz nježno čišćenje i pažljivo spremanje.",
+      "imageAlt": "Obruč za vez i šareni konci",
+      "one": "Prvo očistite samo mrlju i provjerite postojanost boje prije pranja.",
+      "two": "Izbjegavajte trljanje i cijeđenje; nježno oblikujte vlažan rad.",
+      "three": "Spremite rad suh, zaštićen od dugotrajnog izravnog svjetla."
+    },
+    "calloutEyebrow": "STVORITE JOŠ NEŠTO",
+    "calloutTitle": "Ovdje počinje vaša nova ideja.",
+    "calloutLink": "Isplanirajte kreativno poslijepodne"
+  },
+  "Planner": {
+    "metaTitle": "Planer kreativnog poslijepodneva",
+    "eyebrow": "MALO PROSTORA ZA ISPROBAVANJE",
+    "title": "Poslijepodne\npo vašoj mjeri.",
+    "intro": "Odaberite tehniku, pozovite prijatelje i osmislite mali kreativni plan. Slobodno promijenite jezik; vaš odabir ostaje sačuvan.",
+    "loading": "Otvaramo vaš kreativni planer…",
+    "chooseCraft": "ODABERITE TEHNIKU",
+    "projectName": "Dajte ime svom projektu",
+    "namePlaceholder": "Nedjelja za kuhinjskim stolom",
+    "who": "Tko vam se pridružuje?",
+    "peopleHint": "Od mirnog poslijepodneva do stola za osmero.",
+    "fewer": "Jedna osoba manje",
+    "more": "Jedna osoba više",
+    "people": "Broj osoba u planu",
+    "peopleCount": "{count, plural, one {# osoba} few {# osobe} other {# osoba}}",
+    "tip": "Nakon nekoliko odabira isprobajte izbornik jezika. Vaš plan ostaje na mjestu.",
+    "yourPlan": "VAŠ MALI PLAN",
+    "defaultName": "Kreativno poslijepodne",
+    "kitIncludes": "Za svaku osobu",
+    "estimate": "Procjena troška materijala",
+    "estimateHint": "Okvirni budžet za materijal, a ne prijava na radionicu ili plaćanje.",
+    "download": "Preuzmite svoj plan",
+    "downloaded": "Vaš je plan preuzet.",
+    "localHint": "Nacrt ostaje u ovoj kartici preglednika.",
+    "crafts": {
+      "clay": {
+        "title": "Malo gline",
+        "description": "Polako oblikujte jednostavne forme i mali predmet koji će biti samo vaš.",
+        "one": "Glina koja se suši na zraku",
+        "two": "Osnovni alat za oblikovanje",
+        "three": "Papir za zaštitu stola"
+      },
+      "paper": {
+        "title": "Malo papira",
+        "description": "Igrajte se oblicima, teksturama i otiscima nadahnutima prirodom.",
+        "one": "Mali paket likovnog papira",
+        "two": "Boja na bazi vode i spužvica",
+        "three": "Listovi za izradu otisaka"
+      },
+      "textile": {
+        "title": "Malo konca",
+        "description": "Nekoliko strpljivih bodova može pretvoriti komadić lana u priču.",
+        "one": "Mali obruč za vez",
+        "two": "Lan, konac i igla",
+        "three": "Jednostavan vodič za bodove"
+      }
+    }
+  },
+  "Rendering": {
+    "summary": "Kako ova stranica mijenja jezik?",
+    "renderedAt": "Prikaz pripremljen za ovaj zahtjev:",
+    "builtAt": "Generirano tijekom builda:",
+    "url": "Zadani način: jezik je skriven u URL-u. Nije potrebno ponovno učitavanje cijelog dokumenta.",
+    "server": {
+      "badge": "SSR · Payload CMS",
+      "description": "Ova stranica za svaki zahtjev na serveru čita prevedeni sadržaj iz Payloada. Odabir drugog jezika koristi App Router navigaciju za dohvat odgovarajućeg serverskog prikaza; vidljiva putanja ostaje ista."
+    },
+    "static": {
+      "badge": "SSG · Generirano pri buildu",
+      "description": "Engleska i hrvatska verzija generiraju se pri buildu. Promjena jezika navigira na odgovarajuću unaprijed pripremljenu rutu. Podaci rute mogu se dohvatiti ako nisu već u predmemoriji, ali sadržaj se ne generira iz CMS-a za svaki zahtjev."
+    },
+    "client": {
+      "badge": "CSR · Planer u pregledniku",
+      "description": "Sadržaj planera učitava se uz ssr: false i prikazuje u pregledniku. Oba kataloga prijevoda već su dostupna. Promjena jezika lokalno ažurira React kontekst, jezik dokumenta i naslov te čuva plan bez dohvaćanja novog serverskog prikaza. Početno zaglavlje, podnožje i prikaz učitavanja ipak su unaprijed generirani."
+    }
+  }
 }

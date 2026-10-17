@@ -26,3 +26,13 @@
 /.vercel/
 .DS_Store
 Thumbs.db
+
+# Local CMS database and test artifacts
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+/test-results/
+/playwright-report/
+
+/.article-backups/
