@@ -4,6 +4,7 @@ import { buildConfig, type CollectionConfig } from "payload";
 import { sqliteAdapter } from "@payloadcms/db-sqlite";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { en } from "@payloadcms/translations/languages/en";
+import { ar } from "@payloadcms/translations/languages/ar";
 import { hr } from "@payloadcms/translations/languages/hr";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -64,11 +65,12 @@ export default buildConfig({
     locales: [
       { code: "en", label: "English" },
       { code: "hr", label: "Hrvatski" },
+      { code: "ar", label: "العربية", rtl: true },
     ],
     defaultLocale: "en",
     fallback: false,
   },
-  i18n: { fallbackLanguage: "en", supportedLanguages: { en, hr } },
+  i18n: { fallbackLanguage: "en", supportedLanguages: { en, hr, ar } },
   collections: [
     {
       slug: "users",
@@ -106,7 +108,7 @@ export default buildConfig({
         {
           name: "locale",
           type: "select",
-          options: ["en", "hr"],
+          options: ["en", "hr", "ar"],
           required: true,
         },
         { name: "consent", type: "checkbox", required: true },
@@ -134,7 +136,7 @@ export default buildConfig({
         {
           name: "locale",
           type: "select",
-          options: ["en", "hr"],
+          options: ["en", "hr", "ar"],
           required: true,
         },
         { name: "consent", type: "checkbox", required: true },

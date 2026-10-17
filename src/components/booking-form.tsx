@@ -93,7 +93,7 @@ export function BookingForm({
         <span className="eyebrow">{t("successLabel")}</span>
         <h3>{t("success")}</h3>
         <p>{t("successDescription")}</p>
-        <code>{reference}</code>
+        <code dir="ltr">{reference}</code>
         <Button
           variant="outline"
           onClick={() => {
@@ -159,6 +159,7 @@ export function BookingForm({
           <label htmlFor="name">{t("name")}</label>
           <Input
             id="name"
+            dir="auto"
             autoComplete="name"
             placeholder={t("namePlaceholder")}
             {...form.register("name")}
@@ -174,6 +175,7 @@ export function BookingForm({
           <Input
             id="email"
             type="email"
+            dir="ltr"
             autoComplete="email"
             placeholder="you@example.com"
             {...form.register("email")}
@@ -212,6 +214,7 @@ export function BookingForm({
         </label>
         <Textarea
           id="note"
+          dir="auto"
           rows={3}
           placeholder={t("notePlaceholder")}
           maxLength={1000}

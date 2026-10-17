@@ -10,6 +10,9 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <>
+      <a className="skip-link" href="#main">
+        {t("skip")}
+      </a>
       <div className="announcement">
         <span>{t("announcement")}</span>
         <span>ZAGREB · EST. 2024</span>
@@ -19,6 +22,7 @@ export function SiteHeader() {
           prefetch={false}
           href="/"
           className="wordmark"
+          dir="ltr"
           aria-label="Atelier"
         >
           <Asterisk aria-hidden />
@@ -103,7 +107,7 @@ export function SiteFooter() {
     <footer id="contact" className="site-footer">
       <div className="container footer-grid">
         <div>
-          <Link prefetch={false} href="/" className="wordmark">
+          <Link prefetch={false} href="/" className="wordmark" dir="ltr">
             <Asterisk aria-hidden />
             atelier.
           </Link>
@@ -111,7 +115,9 @@ export function SiteFooter() {
           <p className="address">
             <MapPin size={15} aria-hidden /> Martićeva 14, Zagreb
           </p>
-          <a href="mailto:hello@atelier.example">hello@atelier.example</a>
+          <a href="mailto:hello@atelier.example">
+            <bdi dir="ltr">hello@atelier.example</bdi>
+          </a>
         </div>
         <div>
           <span className="eyebrow">{t("stayClose")}</span>

@@ -1,11 +1,12 @@
 "use server";
+import { isSupportedLocale } from "@/i18n/locales";
 import { randomUUID } from "node:crypto";
 import { getCMS } from "@/lib/content";
 import { bookingSchema, newsletterSchema } from "@/lib/booking-schema";
 import type { BookingInput } from "@/lib/booking-schema";
 
 export async function requestBooking(input: BookingInput, locale: string) {
-  if (locale !== "en" && locale !== "hr") return { error: "invalid" as const };
+  if (!isSupportedLocale(locale)) return { error: "invalid" as const };
   const parsed = bookingSchema((key) => key).safeParse(input);
   if (!parsed.success) return { error: "invalid" as const };
   const data = parsed.data;
@@ -66,8 +67,7 @@ export async function requestBooking(input: BookingInput, locale: string) {
 }
 export async function subscribe(input: unknown, locale: string) {
   const parsed = newsletterSchema.safeParse(input);
-  if (!parsed.success || (locale !== "en" && locale !== "hr"))
-    return { ok: false };
+  if (!parsed.success || !isSupportedLocale(locale)) return { ok: false };
   try {
     const payload = await getCMS();
     const email = parsed.data.email.toLowerCase();

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Fraunces:ital,wght@0,400;0,450;0,500;0,600;1,400;1,450&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Fraunces:ital,wght@0,400;0,450;0,500;0,600;1,400;1,450&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme inline {
@@ -162,7 +162,7 @@ svg {
 }
 .wordmark-dot {
   color: var(--accent-red);
-  margin-left: -6px;
+  margin-inline-start: -6px;
 }
 .desktop-nav {
   display: flex;
@@ -196,12 +196,12 @@ svg {
   font-size: 11px;
   font-weight: 600;
   padding-block: 12px;
-  padding-right: 16px;
+  padding-inline-end: 16px;
   min-height: 44px;
 }
 .language-switch > svg:last-of-type {
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   pointer-events: none;
 }
 .button {
@@ -258,8 +258,8 @@ svg {
 .mobile-nav {
   position: absolute;
   top: 86px;
-  right: 0;
-  left: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
   z-index: 20;
   background: var(--background);
   padding: 20px;
@@ -327,13 +327,13 @@ svg {
 }
 .avatar-stack {
   display: flex;
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 .avatar-stack span {
   width: 31px;
   height: 31px;
   border: 2px solid var(--background);
-  margin-left: -6px;
+  margin-inline-start: -6px;
   border-radius: 50%;
   background: #c8b7a1;
   display: grid;
@@ -342,7 +342,7 @@ svg {
   color: #4b4238;
 }
 .avatar-stack span:first-child {
-  margin-left: 0;
+  margin-inline-start: 0;
   background: #c1c9b9;
 }
 .avatar-stack span:last-child {
@@ -359,8 +359,8 @@ svg {
   color: var(--foreground);
 }
 .hero-down {
-  margin-left: auto;
-  margin-right: 22px;
+  margin-inline-start: auto;
+  margin-inline-end: 22px;
   stroke-width: 1;
 }
 .hero-visual {
@@ -381,7 +381,7 @@ svg {
   color: #46583f;
   position: absolute;
   top: -20px;
-  right: -22px;
+  inset-inline-end: -22px;
   transform: rotate(12deg);
   display: flex;
   flex-direction: column;
@@ -400,8 +400,8 @@ svg {
 .next-workshop {
   position: absolute;
   bottom: 20px;
-  left: 20px;
-  right: 20px;
+  inset-inline-start: 20px;
+  inset-inline-end: 20px;
   padding: 16px;
   background: #faf9f6f5;
   border-radius: 4px;
@@ -410,7 +410,7 @@ svg {
   gap: 13px;
 }
 .next-workshop > svg {
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 .next-icon {
   width: 38px;
@@ -550,7 +550,7 @@ svg {
 .card-tag {
   position: absolute;
   top: 13px;
-  left: 13px;
+  inset-inline-start: 13px;
   padding: 4px 9px;
   background: #faf9f6f2;
   font-size: 9px;
@@ -559,7 +559,7 @@ svg {
 .photo-arrow {
   position: absolute;
   bottom: 13px;
-  right: 13px;
+  inset-inline-end: 13px;
   width: 33px;
   height: 33px;
   border-radius: 50%;
@@ -665,7 +665,7 @@ svg {
 .photo-caption {
   position: absolute;
   bottom: 17px;
-  left: 19px;
+  inset-inline-start: 19px;
   color: white;
   background: #262b27b8;
   padding: 5px 9px;
@@ -996,7 +996,7 @@ svg {
 .faq-list summary {
   font-size: 12px;
   font-weight: 500;
-  padding-right: 25px;
+  padding-inline-end: 25px;
   list-style: none;
   position: relative;
   min-height: 25px;
@@ -1004,7 +1004,7 @@ svg {
 .faq-list summary::after {
   content: "+";
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   font-size: 20px;
   font-weight: 400;
   top: -4px;
@@ -1221,7 +1221,7 @@ svg {
 .skip-link {
   position: fixed;
   top: -80px;
-  left: 20px;
+  inset-inline-start: 20px;
   padding: 12px;
   background: white;
   z-index: 100;
@@ -1279,7 +1279,7 @@ svg {
     font-size: 9px;
   }
   .hero-sticker {
-    right: -12px;
+    inset-inline-end: -12px;
   }
   .values-strip .values-signature {
     display: none;
@@ -1339,14 +1339,14 @@ svg {
   .hero-sticker {
     width: 85px;
     height: 85px;
-    right: -8px;
+    inset-inline-end: -8px;
   }
   .hero-sticker span {
     font-size: 7px;
   }
   .next-workshop {
-    left: 10px;
-    right: 10px;
+    inset-inline-start: 10px;
+    inset-inline-end: 10px;
     bottom: 10px;
     padding: 12px;
     gap: 8px;
@@ -1409,7 +1409,7 @@ svg {
   .card-tag {
     font-size: 8px;
     top: 9px;
-    left: 9px;
+    inset-inline-start: 9px;
   }
   .studio-photo img {
     height: 370px;
@@ -1438,8 +1438,8 @@ svg {
     gap: 0;
   }
   .guests-row {
-    grid-template-columns: 0.7fr 1fr;
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
   .secure-note {
     font-size: 8px;
@@ -1538,7 +1538,7 @@ svg {
     object-position: center 54%;
   }
   .hero-sticker {
-    right: 12px;
+    inset-inline-end: 12px;
     top: -17px;
     width: 91px;
     height: 91px;
@@ -1547,8 +1547,8 @@ svg {
     font-size: 7px;
   }
   .next-workshop {
-    left: 14px;
-    right: 14px;
+    inset-inline-start: 14px;
+    inset-inline-end: 14px;
     bottom: 14px;
     padding: 14px;
     gap: 11px;
@@ -1620,7 +1620,7 @@ svg {
   .card-tag {
     font-size: 9px;
     top: 12px;
-    left: 12px;
+    inset-inline-start: 12px;
   }
   .card-meta {
     font-size: 10px;
@@ -1951,7 +1951,7 @@ svg {
   letter-spacing: 0.05em;
 }
 .locale-check {
-  margin-left: auto;
+  margin-inline-start: auto;
   color: var(--accent-red);
   display: flex;
 }
@@ -2004,7 +2004,7 @@ svg {
   display: none;
 }
 .rendering-note summary > svg {
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 .rendering-note[open] summary > svg {
   transform: rotate(180deg);
@@ -2161,7 +2161,7 @@ svg {
   color: var(--muted-text);
 }
 .guide-card ul {
-  padding-left: 16px;
+  padding-inline-start: 16px;
   list-style: disc;
   font-size: 12px;
   line-height: 1.8;
@@ -2227,7 +2227,7 @@ svg {
 }
 .craft-choice > .craft-check {
   position: absolute;
-  right: 8px;
+  inset-inline-end: 8px;
   top: 8px;
   color: #49613f;
 }
@@ -2623,5 +2623,86 @@ select,
     -webkit-appearance: auto;
     background-image: none;
     padding-inline-end: 12px;
+  }
+}
+
+/* Arabic uses the same components, with direction-aware layout and typography. */
+html[dir="rtl"] {
+  --display: "Noto Sans Arabic", "Segoe UI", sans-serif;
+}
+html[dir="rtl"] body {
+  font-family: "Noto Sans Arabic", "Segoe UI", sans-serif;
+}
+html[dir="rtl"] :is(h1, h2, h3) {
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+html[dir="rtl"] .hero h1 {
+  font-size: clamp(45px, 4.7vw, 66px);
+  line-height: 1.35;
+}
+html[dir="rtl"]
+  :is(
+    .eyebrow,
+    .announcement,
+    .card-meta,
+    .photo-caption,
+    .locale-menu-label,
+    .rendering-badge
+  ) {
+  letter-spacing: normal;
+}
+html[dir="rtl"] .wordmark {
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: -0.065em;
+}
+html[dir="rtl"] :is(.studio-signature > span, .values-signature) {
+  font-style: normal;
+}
+html[dir="rtl"] :is(.studio-signature small, .planner-people h2) {
+  font-family: "Noto Sans Arabic", "Segoe UI", sans-serif;
+}
+html[dir="rtl"]
+  :is(
+    .hero-copy > p,
+    .workshop-card > p,
+    .studio-copy > p,
+    .studio-long-copy,
+    .section-heading > p,
+    .booking-intro > p,
+    .route-intro > p
+  ) {
+  line-height: 2;
+}
+html[dir="rtl"] :is(.eyebrow, .locale-menu-label, .rendering-badge) {
+  font-size: 11px;
+}
+html[dir="rtl"]
+  :is(.lucide-arrow-right, .lucide-arrow-left, .lucide-arrow-up-right) {
+  transform: scaleX(-1);
+}
+html[dir="rtl"] select {
+  background-position: left 16px center;
+}
+html[dir="rtl"] input[type="email"] {
+  direction: ltr;
+  text-align: left;
+}
+html[dir="rtl"] .booking-success code {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+html[dir="rtl"] .locale-trigger > span[dir="ltr"] {
+  font-family: "DM Sans", sans-serif;
+}
+html[dir="rtl"] .hero-sticker {
+  transform: rotate(-12deg);
+}
+@media (max-width: 600px) {
+  html[dir="rtl"] .hero h1 {
+    font-size: clamp(43px, 10.7vw, 60px);
+  }
+  html[dir="rtl"] .locale-trigger {
+    padding-inline: 12px;
   }
 }

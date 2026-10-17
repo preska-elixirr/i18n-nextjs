@@ -42,6 +42,7 @@ export function NewsletterForm() {
         <input
           id="newsletter-email"
           type="email"
+          dir="ltr"
           autoComplete="email"
           placeholder={t("placeholder")}
           {...form.register("email")}

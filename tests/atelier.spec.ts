@@ -1,10 +1,12 @@
 import fs from "node:fs";
 import { test, expect, type Page } from "@playwright/test";
-async function chooseLanguage(page: Page, locale: "en" | "hr") {
-  await page.getByRole("combobox", { name: /^(Language|Jezik)$/ }).click();
+async function chooseLanguage(page: Page, locale: "en" | "hr" | "ar") {
+  await page
+    .getByRole("combobox", { name: /^(Language|Jezik|اللغة)$/ })
+    .click();
   await page
     .getByRole("option", {
-      name: locale === "en" ? "English" : "Hrvatski",
+      name: { en: "English", hr: "Hrvatski", ar: "العربية" }[locale],
       exact: true,
     })
     .click();
@@ -258,7 +260,14 @@ test("production output includes real SSG routes and request-rendered CMS routes
   const manifest = JSON.parse(
     fs.readFileSync(".next/prerender-manifest.json", "utf8"),
   );
-  for (const route of ["/en/guide", "/hr/guide", "/en/planner", "/hr/planner"])
+  for (const route of [
+    "/en/guide",
+    "/hr/guide",
+    "/ar/guide",
+    "/en/planner",
+    "/hr/planner",
+    "/ar/planner",
+  ])
     expect(manifest.routes[route]).toBeDefined();
   expect(manifest.routes["/en/studio"]).toBeUndefined();
   expect(manifest.routes["/en/workshops"]).toBeUndefined();
@@ -380,4 +389,202 @@ test("new SSR and client-only routes fit a mobile viewport", async ({
     path: "test-results/atelier-planner-mobile-menu.png",
   });
   await page.keyboard.press("Escape");
+});
+
+test("Arabic SSR content, validation and real submissions use RTL with isolated LTR fields", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 1050 });
+  await page.goto("/");
+  const origin = await page.evaluate(() => performance.timeOrigin);
+  await chooseLanguage(page, "ar");
+  await expect(page.locator("html")).toHaveAttribute("lang", "ar");
+  await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "بعض الوقت.",
+  );
+  await expect(page.locator(".workshop-card").first()).toContainText(
+    "أحد هادئ مع الخزف",
+  );
+  expect(new URL(page.url()).pathname).toBe("/");
+  expect(await page.evaluate(() => performance.timeOrigin)).toBe(origin);
+  await page.getByRole("button", { name: "أرسل طلبك", exact: true }).click();
+  await expect(page.locator(".field-error").first()).toBeVisible();
+  await expect(
+    page.getByLabel("الاسم الكامل", { exact: true }),
+  ).toHaveAttribute("dir", "auto");
+  const email = fixture.email.replace("@", "-rtl@");
+  await page
+    .getByLabel("الورشة", { exact: true })
+    .selectOption({ label: "أحد هادئ مع الخزف" });
+  await page.getByLabel("الاسم الكامل", { exact: true }).fill("ليلى حسن");
+  const emailInput = page
+    .getByLabel("البريد الإلكتروني", { exact: true })
+    .first();
+  await expect(emailInput).toHaveAttribute("dir", "ltr");
+  await emailInput.fill(email);
+  await page.getByLabel("عدد الأماكن", { exact: true }).selectOption("2");
+  await page
+    .getByLabel("هل هناك ما ينبغي أن نعرفه؟", { exact: false })
+    .fill("اختبار نموذج عربي");
+  await page.locator(".booking-form").getByRole("checkbox").check();
+  await page.getByRole("button", { name: "أرسل طلبك", exact: true }).click();
+  await expect(page.getByText("وصلنا طلبك.", { exact: true })).toBeVisible();
+  await expect(page.locator(".booking-success code")).toHaveAttribute(
+    "dir",
+    "ltr",
+  );
+  const newsletter = page.locator(".newsletter-form");
+  await newsletter.getByLabel("البريد الإلكتروني", { exact: true }).fill(email);
+  await newsletter.getByRole("checkbox").check();
+  await newsletter.getByRole("button").click();
+  await expect(page.locator(".newsletter-success")).toBeVisible();
+  await page.locator(".site-footer").scrollIntoViewIfNeeded();
+  await page.waitForFunction(() =>
+    Array.from(document.images).every((i) => i.complete),
+  );
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.screenshot({
+    path: "test-results/atelier-ar-desktop.png",
+    fullPage: true,
+  });
+  const cms = await page.request.get(
+    "/api/workshops?locale=ar&fallback-locale=none",
+  );
+  expect(
+    (await cms.json()).docs.map((d: { title: string }) => d.title),
+  ).toContain("أحد هادئ مع الخزف");
+});
+
+test("Arabic planner switches direction in memory, keeps state and carries its cookie to SSR", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 1050 });
+  await page.goto("/planner");
+  await page
+    .getByLabel("Give your project a name", { exact: true })
+    .fill("مشروع Weekend");
+  await page
+    .getByRole("button", { name: "A little paper", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "One more person", exact: true })
+    .click();
+  await page.waitForLoadState("networkidle");
+  const origin = await page.evaluate(() => performance.timeOrigin);
+  const requests: string[] = [];
+  page.on("request", (r) => {
+    if (
+      r.url().startsWith(new URL(page.url()).origin) &&
+      ["document", "fetch", "xhr"].includes(r.resourceType())
+    )
+      requests.push(r.url());
+  });
+  await chooseLanguage(page, "ar");
+  await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "وقت للإبداع،\nعلى طريقتك.",
+  );
+  await expect(page.getByLabel("سمّ مشروعك", { exact: true })).toHaveValue(
+    "مشروع Weekend",
+  );
+  const localizedCount = await page.evaluate(() =>
+    new Intl.NumberFormat("ar").format(3),
+  );
+  await expect(page.locator("[data-planner-count]")).toHaveText(localizedCount);
+  await expect(
+    page.getByRole("button", { name: "قليل من الورق", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await expect(page).toHaveTitle("مخطط وقتك الإبداعي | Atelier");
+  await page.screenshot({
+    path: "test-results/atelier-ar-planner.png",
+    fullPage: true,
+  });
+  await chooseLanguage(page, "hr");
+  await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
+  await expect(
+    page.getByLabel("Dajte ime svom projektu", { exact: true }),
+  ).toHaveValue("مشروع Weekend");
+  await chooseLanguage(page, "ar");
+  await expect(page.locator("html")).toHaveAttribute("lang", "ar");
+  await page.waitForTimeout(250);
+  expect(requests).toEqual([]);
+  expect(new URL(page.url()).pathname).toBe("/planner");
+  expect(await page.evaluate(() => performance.timeOrigin)).toBe(origin);
+  await page.goto("/workshops/slow-sunday-ceramics");
+  await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "أحد هادئ مع الخزف",
+  );
+});
+
+test("Arabic SSG, mobile routes, menus and native select spacing remain usable", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/guide");
+  await chooseLanguage(page, "ar");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "صنعتها بيديك.\nلتبقى معك سنوات.",
+  );
+  const response = await page.request.get("/guide");
+  expect(await response.text()).toContain('dir="rtl"');
+  for (const route of [
+    "/",
+    "/workshops",
+    "/studio",
+    "/guide",
+    "/planner",
+    "/workshops/slow-sunday-ceramics",
+  ]) {
+    await page.goto(route);
+    await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > innerWidth,
+      ),
+    ).toBeFalsy();
+  }
+  await page.goto("/");
+  const styles = await page
+    .locator(".booking-form select")
+    .first()
+    .evaluate((el) => {
+      const s = getComputedStyle(el);
+      return {
+        background: s.backgroundPosition,
+        padding: s.paddingInlineEnd,
+        direction: s.direction,
+      };
+    });
+  expect(styles.background).toBe("16px 50%");
+  expect(styles.padding).toBe("44px");
+  expect(styles.direction).toBe("rtl");
+  await page.evaluate(() => document.fonts.ready);
+  const fits = await page.locator("#guests").evaluate((el) => {
+    const select = el as HTMLSelectElement;
+    const style = getComputedStyle(select);
+    const context = document.createElement("canvas").getContext("2d")!;
+    context.font = style.font;
+    const available =
+      select.clientWidth -
+      parseFloat(style.paddingLeft) -
+      parseFloat(style.paddingRight);
+    return Array.from(select.options).every(
+      (option) => context.measureText(option.text).width <= available,
+    );
+  });
+  expect(fits).toBeTruthy();
+  await page.locator(".booking-form").scrollIntoViewIfNeeded();
+  await page.screenshot({ path: "test-results/atelier-ar-mobile-booking.png" });
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.getByRole("combobox", { name: "اللغة", exact: true }).click();
+  await expect(page.getByRole("listbox")).toHaveAttribute("dir", "rtl");
+  await page.screenshot({ path: "test-results/atelier-ar-mobile-menu.png" });
+  await page.keyboard.press("Escape");
+  await page.screenshot({
+    path: "test-results/atelier-ar-mobile.png",
+    fullPage: true,
+  });
 });

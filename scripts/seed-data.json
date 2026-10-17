@@ -13,6 +13,13 @@
       "heroDescription": "Odložite mobitel. Zaprljajte ruke. Ponovno otkrijte užitak stvaranja nečega, jednostavno zato što vas veseli.",
       "storyTitle": "Više od radionice.\nTrenutak za sebe.",
       "story": "Atelier je počeo sa stolom, kavom i uvjerenjem da svatko ima kreativnu stranu. Danas naš mali studio okuplja ljude oko gline, papira i konca.\n\nOvdje ne jurimo savršen rezultat. Nudimo strpljivo vodstvo, dobar razgovor i tiho zadovoljstvo stvaranja vlastitim rukama."
+    },
+    "ar": {
+      "eyebrow": "زاوية إبداعية صغيرة في زغرب",
+      "heroTitle": "بعض الوقت.\nوشيء تصنعه\nبيديك.",
+      "heroDescription": "ضع هاتفك جانباً واترك يديك تتسخان قليلاً. اكتشف متعة صنع شيء لمجرد أن ذلك يسعدك.",
+      "storyTitle": "أكثر من ورشة.\nلحظة لنفسك.",
+      "story": "بدأ أتيليه بطاولة وقهوة وإيمان بأن لكل شخص جانباً مبدعاً. اليوم يجمع استوديونا الصغير الناس حول الطين والورق والخيط.\n\nلا نسعى هنا إلى نتيجة مثالية. بل نقدم إرشاداً صبوراً وحديثاً لطيفاً ورضا هادئاً عن صنع شيء بيديك."
     }
   },
   "workshops": [
@@ -39,6 +46,14 @@
         "included": "Glina, alati i pregača\nGlaziranje i dva pečenja\nKava, čaj i domaća slastica\nMala grupa i osobno vodstvo",
         "imageAlt": "Ruke oblikuju keramičku posudu na lončarskom kolu",
         "level": "Za početnike i sve znatiželjne ruke."
+      },
+      "ar": {
+        "title": "أحد هادئ مع الخزف",
+        "description": "كوب دافئ وصباح هادئ وقليل من الطين. اصنع قطعتك المفضلة للاستخدام كل يوم.",
+        "details": "تعلم تقنيات التشكيل اليدوي وأنت تصنع كوباً أو وعاءً صغيراً. سترشدك مارتا إلى التشكيل بالأصابع واللفائف وإضافة الملمس، مع مساحة واسعة لأفكارك.\n\nسنطلي قطعتك ونحرقها في الفرن بعد الورشة. يمكنك استلامها بعد ثلاثة إلى أربعة أسابيع.",
+        "included": "الطين والأدوات والمريلة\nالطلاء الزجاجي والحرق مرتين\nالقهوة والشاي وحلوى منزلية\nمجموعة صغيرة وإرشاد شخصي",
+        "imageAlt": "يدان تشكلان وعاءً خزفياً على عجلة الفخار",
+        "level": "للمبتدئين ولكل يدين فضوليتين."
       }
     },
     {
@@ -64,6 +79,14 @@
         "included": "Grafičke boje, valjci i alati\nIzbor kvalitetnih papira\nBiljni materijali i knjige za inspiraciju\nKava, čaj i vaši otisci",
         "imageAlt": "Zeleni listovi kao inspiracija za botaničke otiske",
         "level": "Iskustvo u crtanju ili grafici nije potrebno."
+      },
+      "ar": {
+        "title": "طبعات من الطبيعة",
+        "description": "أوراق نباتية وحبر وجمال التفاصيل العفوية. اصنع مجموعة مطبوعات تلهمها الطبيعة.",
+        "details": "اكتشف إيقاع الطباعة الممتع باستخدام الأوراق النباتية والأشكال المحفورة يدوياً. سيرشدك لوكا إلى التكوين ووضع الحبر والطباعة على ورق فني سميك.\n\nستغادر بمجموعة طبعات أصلية وثقة تشجعك على مواصلة التجربة في المنزل.",
+        "included": "أحبار الطباعة والبكرات والأدوات\nمجموعة من الأوراق الفنية\nمواد نباتية وكتب للإلهام\nالقهوة والشاي ومطبوعاتك الجاهزة",
+        "imageAlt": "أوراق خضراء تلهم الطباعة النباتية",
+        "level": "لا تحتاج إلى خبرة في الرسم أو الطباعة."
       }
     },
     {
@@ -89,6 +112,14 @@
         "included": "Lan, obruč za vez i igla\nPaleta šarenih konaca\nVodič za bodove koji nosite kući\nKava, čaj i strpljivo društvo",
         "imageAlt": "Šareni konci za vez i prirodna tkanina pripremljeni za tekstilnu radionicu",
         "level": "Nježan uvod. Dobrodošli su svi, bez obzira na iskustvo."
+      },
+      "ar": {
+        "title": "طرّز حكاية صغيرة",
+        "description": "تمهّل، غرزة بعد غرزة. وحوّل قطعة كتان بسيطة إلى شيء يحمل طابعك.",
+        "details": "مقدمة إلى التطريز لمن يرغب في وقت أكثر هدوءاً. ستعرفك إيفا إلى بعض الغرز المتنوعة وتساعدك على تصميم زخرفة صغيرة خاصة بك.\n\nتأخذ الطارة والإبرة والخيوط المتبقية إلى المنزل لتستمر الحكاية.",
+        "included": "الكتان وطارة التطريز والإبرة\nمجموعة من الخيوط الملونة\nدليل غرز تأخذه إلى المنزل\nالقهوة والشاي ورفقة صبورة",
+        "imageAlt": "خيوط تطريز ملونة وقماش طبيعي جاهز للورشة",
+        "level": "بداية هادئة. نرحب بجميع مستويات الخبرة."
       }
     }
   ]

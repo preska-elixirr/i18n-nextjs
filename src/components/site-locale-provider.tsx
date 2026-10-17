@@ -6,7 +6,9 @@ import { routing, type AppLocale } from "@/i18n/routing";
 import en from "@/messages/en.json";
 import hr from "@/messages/hr.json";
 
-const catalogs = { en, hr };
+import ar from "@/messages/ar.json";
+import { getDirection } from "@/i18n/locales";
+const catalogs = { en, hr, ar };
 const ClientLocaleContext = createContext<{
   inMemory: boolean;
   change: (locale: AppLocale) => void;
@@ -24,7 +26,7 @@ export function SiteLocaleProvider({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const visiblePath = pathname.replace(/^\/(en|hr)(?=\/|$)/, "") || "/";
+  const visiblePath = pathname.replace(/^\/(en|hr|ar)(?=\/|$)/, "") || "/";
   const inMemory =
     visiblePath === "/planner" && routing.localePrefix === "never";
   const [override, setOverride] = useState<AppLocale | null>(null);
@@ -35,7 +37,7 @@ export function SiteLocaleProvider({
   useEffect(() => {
     if (!inMemory) return;
     document.documentElement.lang = locale;
-    document.documentElement.dir = "ltr";
+    document.documentElement.dir = getDirection(locale);
     document.title = catalogs[locale].Planner.metaTitle + " | Atelier";
   }, [locale, inMemory]);
   function change(next: AppLocale) {

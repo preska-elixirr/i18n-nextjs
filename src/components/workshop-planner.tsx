@@ -123,6 +123,7 @@ export default function WorkshopPlanner() {
             <label htmlFor={id}>{t("projectName")}</label>
             <Input
               id={id}
+              dir="auto"
               value={name}
               maxLength={80}
               placeholder={t("namePlaceholder")}
@@ -150,7 +151,7 @@ export default function WorkshopPlanner() {
                 <Minus size={17} />
               </button>
               <output aria-label={t("people")} data-planner-count>
-                {people}
+                {new Intl.NumberFormat(locale).format(people)}
               </output>
               <button
                 type="button"
@@ -175,7 +176,9 @@ export default function WorkshopPlanner() {
           <div className="plan-preview-icon">
             <current.Icon size={35} aria-hidden />
           </div>
-          <h2>{name || t("defaultName")}</h2>
+          <h2>
+            <bdi>{name || t("defaultName")}</bdi>
+          </h2>
           <p>{t("crafts." + craft + ".description")}</p>
           <div className="plan-kit">
             <span>{t("kitIncludes")}</span>

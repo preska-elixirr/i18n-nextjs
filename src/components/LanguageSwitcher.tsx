@@ -4,6 +4,7 @@ import { hasLocale, useLocale, useTranslations } from "next-intl";
 import { Select } from "radix-ui";
 import { Check, ChevronDown, Globe2, LoaderCircle } from "lucide-react";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { getDirection } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
 import { useClientLocale } from "./site-locale-provider";
 
@@ -29,10 +30,15 @@ export default function LanguageSwitcher() {
   }
   return (
     <div className="locale-select">
-      <Select.Root value={locale} onValueChange={change} disabled={pending}>
+      <Select.Root
+        value={locale}
+        onValueChange={change}
+        disabled={pending}
+        dir={getDirection(locale)}
+      >
         <Select.Trigger className="locale-trigger" aria-label={t("language")}>
           <Globe2 size={16} aria-hidden />
-          <span>{locale.toUpperCase()}</span>
+          <span dir="ltr">{locale.toUpperCase()}</span>
           <Select.Icon asChild>
             {pending ? (
               <LoaderCircle size={14} className="spin" aria-hidden />
@@ -57,17 +63,20 @@ export default function LanguageSwitcher() {
                 {[
                   { code: "en", name: "English" },
                   { code: "hr", name: "Hrvatski" },
+                  { code: "ar", name: "العربية" },
                 ].map((item) => (
                   <Select.Item
                     className="locale-option"
                     value={item.code}
                     key={item.code}
                   >
-                    <span className="locale-code" aria-hidden>
+                    <span className="locale-code" dir="ltr" aria-hidden>
                       {item.code.toUpperCase()}
                     </span>
                     <Select.ItemText>
-                      <span lang={item.code}>{item.name}</span>
+                      <span lang={item.code} dir={getDirection(item.code)}>
+                        {item.name}
+                      </span>
                     </Select.ItemText>
                     <Select.ItemIndicator className="locale-check">
                       <Check size={16} aria-hidden />

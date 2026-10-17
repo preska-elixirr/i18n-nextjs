@@ -11,7 +11,8 @@
     "menu": "Otvori izbornik",
     "closeMenu": "Zatvori izbornik",
     "guide": "Vodič za njegu",
-    "planner": "Kreativni planer"
+    "planner": "Kreativni planer",
+    "skip": "Preskoči na sadržaj"
   },
   "Home": {
     "metaTitle": "Kreativne radionice u Zagrebu",
@@ -270,11 +271,11 @@
     },
     "static": {
       "badge": "SSG · Generirano pri buildu",
-      "description": "Engleska i hrvatska verzija generiraju se pri buildu. Promjena jezika navigira na odgovarajuću unaprijed pripremljenu rutu. Podaci rute mogu se dohvatiti ako nisu već u predmemoriji, ali sadržaj se ne generira iz CMS-a za svaki zahtjev."
+      "description": "Engleska, hrvatska i arapska verzija generiraju se pri buildu. Promjena jezika navigira na odgovarajuću unaprijed pripremljenu rutu. Podaci rute mogu se dohvatiti ako nisu već u predmemoriji, ali sadržaj se ne generira iz CMS-a za svaki zahtjev."
     },
     "client": {
       "badge": "CSR · Planer u pregledniku",
-      "description": "Sadržaj planera učitava se uz ssr: false i prikazuje u pregledniku. Oba kataloga prijevoda već su dostupna. Promjena jezika lokalno ažurira React kontekst, jezik dokumenta i naslov te čuva plan bez dohvaćanja novog serverskog prikaza. Početno zaglavlje, podnožje i prikaz učitavanja ipak su unaprijed generirani."
+      "description": "Sadržaj planera učitava se uz ssr: false i prikazuje u pregledniku. Sva tri kataloga prijevoda već su dostupna. Promjena jezika lokalno ažurira React kontekst, jezik, smjer i naslov dokumenta te čuva plan bez dohvaćanja novog serverskog prikaza. Početno zaglavlje, podnožje i prikaz učitavanja ipak su unaprijed generirani."
     }
   }
 }

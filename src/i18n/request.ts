@@ -5,6 +5,7 @@ import { getRequestConfig } from "next-intl/server";
 import { routing } from "./routing";
 
 const catalogs = {
+  ar: () => import("../messages/ar.json").then((module) => module.default),
   en: () => import("../messages/en.json").then((module) => module.default),
   hr: () => import("../messages/hr.json").then((module) => module.default),
 };

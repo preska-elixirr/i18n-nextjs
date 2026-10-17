@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Search, ArrowUpRight, Clock, ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { getIntlLocale } from "@/i18n/locales";
 import type { Workshop } from "@/payload-types";
 const categories = ["all", "clay", "paper", "textile"] as const;
 export function WorkshopBrowser({ workshops }: { workshops: Workshop[] }) {
@@ -72,7 +73,7 @@ export function WorkshopBrowser({ workshops }: { workshops: Workshop[] }) {
             </Link>
             <div className="card-meta">
               <span>
-                {new Intl.DateTimeFormat(locale === "hr" ? "hr-HR" : "en-GB", {
+                {new Intl.DateTimeFormat(getIntlLocale(locale), {
                   day: "numeric",
                   month: "short",
                   timeZone: "Europe/Zagreb",

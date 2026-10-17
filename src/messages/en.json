@@ -11,7 +11,8 @@
     "menu": "Open menu",
     "closeMenu": "Close menu",
     "guide": "Care guide",
-    "planner": "Creative planner"
+    "planner": "Creative planner",
+    "skip": "Skip to content"
   },
   "Home": {
     "metaTitle": "Creative workshops in Zagreb",
@@ -270,11 +271,11 @@
     },
     "static": {
       "badge": "SSG · Build-time content",
-      "description": "English and Croatian versions are generated at build time. Choosing another language navigates to the matching prebuilt route. Its route payload may be fetched if it is not already cached, but the content is not generated from the CMS per request."
+      "description": "English, Croatian and Arabic versions are generated at build time. Choosing another language navigates to the matching prebuilt route. Its route payload may be fetched if it is not already cached, but the content is not generated from the CMS per request."
     },
     "client": {
       "badge": "CSR · Browser-only planner",
-      "description": "The planner body is loaded with ssr: false and rendered in the browser. Both message catalogs are already available. Changing language updates React context, document language and title locally, preserving your plan without requesting new server output. The initial header, footer and loading shell are still prerendered."
+      "description": "The planner body is loaded with ssr: false and rendered in the browser. All three message catalogs are already available. Changing language updates React context, document language, direction and title locally, preserving your plan without requesting new server output. The initial header, footer and loading shell are still prerendered."
     }
   }
 }

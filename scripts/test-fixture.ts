@@ -9,11 +9,15 @@ if (process.argv.includes("--cleanup")) {
     const fixture = JSON.parse(fs.readFileSync(file, "utf8"));
     const bookings = await payload.find({
       collection: "bookings",
-      where: { email: { equals: fixture.email } },
+      where: {
+        email: { in: [fixture.email, fixture.email.replace("@", "-rtl@")] },
+      },
     });
     const subscribers = await payload.find({
       collection: "subscribers",
-      where: { email: { equals: fixture.email } },
+      where: {
+        email: { in: [fixture.email, fixture.email.replace("@", "-rtl@")] },
+      },
     });
     console.log(
       JSON.stringify({
@@ -24,16 +28,24 @@ if (process.argv.includes("--cleanup")) {
       }),
     );
     const valid =
-      bookings.totalDocs === 1 &&
-      subscribers.totalDocs === 1 &&
-      bookings.docs[0]?.total === 130;
+      bookings.totalDocs === 2 &&
+      subscribers.totalDocs === 2 &&
+      bookings.docs.every(
+        (doc) => doc.total === 130 && doc.status === "requested",
+      ) &&
+      bookings.docs.some((doc) => doc.locale === "ar") &&
+      subscribers.docs.some((doc) => doc.locale === "ar");
     await payload.delete({
       collection: "bookings",
-      where: { email: { equals: fixture.email } },
+      where: {
+        email: { in: [fixture.email, fixture.email.replace("@", "-rtl@")] },
+      },
     });
     await payload.delete({
       collection: "subscribers",
-      where: { email: { equals: fixture.email } },
+      where: {
+        email: { in: [fixture.email, fixture.email.replace("@", "-rtl@")] },
+      },
     });
     await payload.delete({ collection: "users", id: fixture.userId });
     fs.unlinkSync(file);

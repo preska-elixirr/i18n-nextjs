@@ -4,9 +4,12 @@ import { useId, useState } from "react";
 import { NextIntlClientProvider, useTranslations } from "next-intl";
 import en from "../messages/en.json";
 import hr from "../messages/hr.json";
+import ar from "../messages/ar.json";
+import { getDirection, isSupportedLocale } from "@/i18n/locales";
 import type { AppLocale } from "@/i18n/routing";
 
 const catalogs = {
+  ar: { ClientDemo: ar.ClientDemo },
   en: { ClientDemo: en.ClientDemo },
   hr: { ClientDemo: hr.ClientDemo },
 };
@@ -23,7 +26,7 @@ export default function ClientLanguageDemo({
       messages={catalogs[locale]}
       timeZone="Europe/Zagreb"
     >
-      <section lang={locale} dir="ltr">
+      <section lang={locale} dir={getDirection(locale)}>
         <DemoContent locale={locale} onChange={setLocale} />
       </section>
     </NextIntlClientProvider>
@@ -49,7 +52,7 @@ function DemoContent({
         value={locale}
         onChange={(event) => {
           const value = event.target.value;
-          if (value === "en" || value === "hr") onChange(value);
+          if (isSupportedLocale(value)) onChange(value);
         }}
       >
         <option value="en" lang="en">
@@ -57,6 +60,9 @@ function DemoContent({
         </option>
         <option value="hr" lang="hr">
           Hrvatski
+        </option>
+        <option value="ar" lang="ar">
+          العربية
         </option>
       </select>
       <button type="button" onClick={() => setCount((value) => value + 1)}>

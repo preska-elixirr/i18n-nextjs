@@ -90,14 +90,14 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'hr') | ('en' | 'hr')[];
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'hr' | 'ar') | ('en' | 'hr' | 'ar')[];
   globals: {
     studio: Studio;
   };
   globalsSelect: {
     studio: StudioSelect<false> | StudioSelect<true>;
   };
-  locale: 'en' | 'hr';
+  locale: 'en' | 'hr' | 'ar';
   widgets: {
     collections: CollectionsWidget;
   };
@@ -190,7 +190,7 @@ export interface Booking {
   workshop: number | Workshop;
   guests: number;
   note?: string | null;
-  locale: 'en' | 'hr';
+  locale: 'en' | 'hr' | 'ar';
   consent: boolean;
   total: number;
   status: 'requested' | 'confirmed' | 'cancelled';
@@ -204,7 +204,7 @@ export interface Booking {
 export interface Subscriber {
   id: number;
   email: string;
-  locale: 'en' | 'hr';
+  locale: 'en' | 'hr' | 'ar';
   consent: boolean;
   updatedAt: string;
   createdAt: string;

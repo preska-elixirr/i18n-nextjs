@@ -36,3 +36,5 @@ Thumbs.db
 /playwright-report/
 
 /.article-backups/
+
+/.local-backups/

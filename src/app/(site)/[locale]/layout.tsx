@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { getDirection } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
 import { SiteHeader, SiteFooter } from "@/components/site-shell";
 import "../globals.css";
@@ -23,14 +24,13 @@ export default async function SiteLayout({
   if (!hasLocale(routing.locales, locale)) notFound();
   const messages = await getMessages();
   return (
-    <html lang={locale} dir="ltr">
+    <html lang={locale} dir={getDirection(locale)}>
       <body>
         <SiteLocaleProvider locale={locale} messages={messages}>
-          <a className="skip-link" href="#main">
-            {locale === "hr" ? "Preskoči na sadržaj" : "Skip to content"}
-          </a>
           <SiteHeader />
-          <main id="main">{children}</main>
+          <main id="main" tabIndex={-1}>
+            {children}
+          </main>
           <SiteFooter />
         </SiteLocaleProvider>
       </body>
