@@ -2,7 +2,7 @@
 import { useTransition } from "react";
 import { hasLocale, useLocale, useTranslations } from "next-intl";
 import { Select } from "radix-ui";
-import { Check, ChevronDown, Globe2, LoaderCircle } from "lucide-react";
+import { Check, ChevronDown, Globe, LoaderCircle } from "lucide-react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { getDirection } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
@@ -37,7 +37,7 @@ export default function LanguageSwitcher() {
         dir={getDirection(locale)}
       >
         <Select.Trigger className="locale-trigger" aria-label={t("language")}>
-          <Globe2 size={16} aria-hidden />
+          <Globe size={16} aria-hidden />
           <span dir="ltr">{locale.toUpperCase()}</span>
           <Select.Icon asChild>
             {pending ? (
