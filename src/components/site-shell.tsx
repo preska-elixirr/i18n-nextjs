@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Asterisk, ArrowUpRight, Menu, X, MapPin } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { getIntlLocale } from "@/i18n/locales";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { NewsletterForm } from "./newsletter-form";
 export function SiteHeader() {
@@ -101,6 +102,33 @@ export function SiteHeader() {
     </>
   );
 }
+// Unsplash photographers of the images in public/images; see docs/photo-credits.md.
+const photographers: Record<string, string> = {
+  "Jonathan Cosens Photography": "https://unsplash.com/@jcosens",
+  "Emily Underworld": "https://unsplash.com/@emilyunderworld",
+  "Nahil Naseer": "https://unsplash.com/@nahilnaseer",
+};
+function PhotographerList() {
+  const locale = useLocale();
+  // ListFormat supplies the locale's separators and "and" ("i" in Croatian, "و" in Arabic).
+  return new Intl.ListFormat(getIntlLocale(locale), { type: "conjunction" })
+    .formatToParts(Object.keys(photographers))
+    .map((part, index) =>
+      part.type === "element" ? (
+        <a
+          key={index}
+          href={photographers[part.value]}
+          target="_blank"
+          rel="noreferrer"
+          dir="ltr"
+        >
+          {part.value}
+        </a>
+      ) : (
+        part.value
+      ),
+    );
+}
 export function SiteFooter() {
   const t = useTranslations("Footer");
   return (
@@ -133,6 +161,16 @@ export function SiteFooter() {
           <ArrowUpRight size={13} aria-hidden />
         </a>
       </div>
+      <p className="container photo-credits">
+        {t.rich("photos", {
+          names: () => <PhotographerList />,
+          unsplash: (chunks) => (
+            <a href="https://unsplash.com" target="_blank" rel="noreferrer">
+              {chunks}
+            </a>
+          ),
+        })}
+      </p>
     </footer>
   );
 }

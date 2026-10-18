@@ -1099,6 +1099,15 @@ svg {
   gap: 7px;
   align-items: center;
 }
+.photo-credits {
+  padding-block-end: 19px;
+  font-size: 11px;
+  color: var(--muted-text);
+}
+.photo-credits a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 .detail-page {
   padding-block: 30px 80px;
 }

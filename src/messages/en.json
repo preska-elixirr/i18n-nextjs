@@ -129,7 +129,8 @@
     "stayClose": "LET’S KEEP IN TOUCH",
     "newsletter": "Good things, occasionally.",
     "made": "Made with care in Zagreb.",
-    "cms": "Studio admin"
+    "cms": "Studio admin",
+    "photos": "Photos by <names></names> on <unsplash>Unsplash</unsplash>."
   },
   "Newsletter": {
     "email": "Email address",
