@@ -1200,19 +1200,10 @@ svg {
 .not-found h1 {
   font-size: 48px;
 }
-.loading-shell {
-  padding-block: 60px;
-  min-height: 70vh;
-}
 .skeleton {
   background: #ecebe5;
   border-radius: 5px;
   animation: pulse 1.4s infinite alternate;
-}
-.skeleton-title {
-  width: 50%;
-  height: 45px;
-  margin-bottom: 30px;
 }
 .skeleton-hero {
   width: 100%;

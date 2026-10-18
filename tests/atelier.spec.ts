@@ -44,6 +44,30 @@ test("hidden locale changes CMS content and html language without a new document
   await expect(page).toHaveTitle(/Kreativne radionice/);
 });
 
+test("hidden locale switch keeps the scroll position on a CMS page", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.locator("#guests")).toBeVisible();
+  await page.evaluate(() => window.scrollTo(0, 2000));
+  const before = await page.evaluate(() => window.scrollY);
+  expect(before).toBe(2000);
+  // Open the picker by keyboard so that focusing it does not scroll the page.
+  await page
+    .locator(".locale-trigger")
+    .evaluate((el: HTMLElement) => el.focus({ preventScroll: true }));
+  await page.keyboard.press("Enter");
+  await page
+    .getByRole("option", { name: "Hrvatski", exact: true })
+    .press("Enter");
+  await expect(page.locator("html")).toHaveAttribute("lang", "hr");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "Malo vremena.",
+  );
+  const after = await page.evaluate(() => window.scrollY);
+  expect(Math.abs(after - before)).toBeLessThan(100);
+});
+
 test("filters, search and localized detail pages use published CMS workshops", async ({
   page,
 }) => {
@@ -547,7 +571,7 @@ test("Arabic SSG, mobile routes, menus and native select spacing remain usable",
     ).toBeFalsy();
   }
   await page.goto("/");
-  // The CMS content streams in after the loading shell; measure it once visible.
+  // Measure the booking form only once it is rendered.
   await expect(page.locator("#guests")).toBeVisible();
   const styles = await page
     .locator(".booking-form select")
