@@ -1,7 +1,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildConfig, type CollectionConfig } from "payload";
-import { sqliteAdapter } from "@payloadcms/db-sqlite";
+import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { en } from "@payloadcms/translations/languages/en";
 import { ar } from "@payloadcms/translations/languages/ar";
@@ -56,9 +56,7 @@ const workshops: CollectionConfig = {
 export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || "",
   admin: { user: "users", importMap: { baseDir: path.resolve(dirname) } },
-  db: sqliteAdapter({
-    client: { url: process.env.DATABASE_URL || "file:./atelier.db" },
-  }),
+  db: mongooseAdapter({ url: process.env.DATABASE_URL || "" }),
   editor: lexicalEditor(),
   typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },
   localization: {

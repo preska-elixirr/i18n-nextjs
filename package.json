@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "5.9.2",
-    "@payloadcms/db-sqlite": "3.91.0",
+    "@payloadcms/db-mongodb": "3.91.0",
     "@payloadcms/next": "3.91.0",
     "@payloadcms/richtext-lexical": "3.91.0",
     "@payloadcms/translations": "3.91.0",

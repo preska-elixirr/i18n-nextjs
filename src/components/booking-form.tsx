@@ -9,14 +9,14 @@ import { requestBooking } from "@/actions/bookings";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-type Choice = { id: number; title: string; price: number };
+type Choice = { id: string; title: string; price: number };
 const draftKey = "atelier-booking-draft-v1";
 export function BookingForm({
   workshops,
   selected,
 }: {
   workshops: Choice[];
-  selected?: number;
+  selected?: string;
 }) {
   const t = useTranslations("Booking");
   const errors = useTranslations("Validation");

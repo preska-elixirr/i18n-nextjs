@@ -88,7 +88,7 @@ export interface Config {
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: number;
+    defaultIDType: string;
   };
   fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'hr' | 'ar') | ('en' | 'hr' | 'ar')[];
   globals: {
@@ -130,7 +130,7 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
+  id: string;
   name?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -157,7 +157,7 @@ export interface User {
  * via the `definition` "workshops".
  */
 export interface Workshop {
-  id: number;
+  id: string;
   title: string;
   slug: string;
   description: string;
@@ -183,11 +183,11 @@ export interface Workshop {
  * via the `definition` "bookings".
  */
 export interface Booking {
-  id: number;
+  id: string;
   reference: string;
   name: string;
   email: string;
-  workshop: number | Workshop;
+  workshop: string | Workshop;
   guests: number;
   note?: string | null;
   locale: 'en' | 'hr' | 'ar';
@@ -202,7 +202,7 @@ export interface Booking {
  * via the `definition` "subscribers".
  */
 export interface Subscriber {
-  id: number;
+  id: string;
   email: string;
   locale: 'en' | 'hr' | 'ar';
   consent: boolean;
@@ -214,7 +214,7 @@ export interface Subscriber {
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: number;
+  id: string;
   key: string;
   data:
     | {
@@ -231,28 +231,28 @@ export interface PayloadKv {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: number;
+  id: string;
   document?:
     | ({
         relationTo: 'users';
-        value: number | User;
+        value: string | User;
       } | null)
     | ({
         relationTo: 'workshops';
-        value: number | Workshop;
+        value: string | Workshop;
       } | null)
     | ({
         relationTo: 'bookings';
-        value: number | Booking;
+        value: string | Booking;
       } | null)
     | ({
         relationTo: 'subscribers';
-        value: number | Subscriber;
+        value: string | Subscriber;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: number | User;
+    value: string | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -262,10 +262,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
+  id: string;
   user: {
     relationTo: 'users';
-    value: number | User;
+    value: string | User;
   };
   key?: string | null;
   value?:
@@ -285,7 +285,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
+  id: string;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -411,7 +411,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  * via the `definition` "studio".
  */
 export interface Studio {
-  id: number;
+  id: string;
   eyebrow: string;
   heroTitle: string;
   heroDescription: string;

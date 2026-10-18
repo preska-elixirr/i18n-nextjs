@@ -547,6 +547,8 @@ test("Arabic SSG, mobile routes, menus and native select spacing remain usable",
     ).toBeFalsy();
   }
   await page.goto("/");
+  // The CMS content streams in after the loading shell; measure it once visible.
+  await expect(page.locator("#guests")).toBeVisible();
   const styles = await page
     .locator(".booking-form select")
     .first()

@@ -1,17 +1,24 @@
 # Atelier — a Next.js internationalization app
 
-A trilingual creative-workshop studio with a complete responsive website, Payload CMS, SQLite, workshop detail pages, booking requests and newsletter subscriptions. The local KB article is intentionally ignored by Git.
+A trilingual creative-workshop studio with a complete responsive website, Payload CMS, MongoDB, workshop detail pages, booking requests and newsletter subscriptions. The local KB article is intentionally ignored by Git.
 
 ## Start locally
 
 1. Install Node.js 22.13+ (Node 24 LTS recommended) and run npm ci.
-2. Copy .env.example to .env. Set PAYLOAD_SECRET to a random secret of at least 32 characters. A local .env has already been generated in this checkout.
+2. Copy .env.example to .env. Set PAYLOAD_SECRET to a random secret of at least 32 characters. Set DATABASE_URL to a MongoDB connection string with the database name after the host, for example .../atelier?retryWrites=true. A local .env has already been generated in this checkout.
 3. Run npm run generate:types and npm run generate:importmap.
 4. Run npm run seed. This creates three workshops and studio content in English, Croatian and Arabic. Re-running seed preserves existing content.
 5. Run npm run dev, then open http://localhost:3000.
 6. Open /admin and create the first administrator. No default password is shipped.
 
-The SQLite database is created at atelier.db and is ignored by Git. Production requires a persistent database, generated migrations and appropriate hosting; a temporary serverless filesystem will not retain this local database.
+Content lives in MongoDB (a free MongoDB Atlas cluster works). Payload creates the collections on first use, so there are no migrations to run.
+
+## Deploy to Vercel
+
+1. In MongoDB Atlas, open Network Access and allow 0.0.0.0/0. Vercel functions have no fixed IP addresses.
+2. In Vercel, open Settings > Environment Variables and add PAYLOAD_SECRET and DATABASE_URL.
+3. Seed the Atlas database once from your machine with npm run seed.
+4. Deploy, then open /admin on the deployed site and create the first administrator.
 
 ## Arabic and RTL
 
@@ -53,7 +60,7 @@ Run npm run seed before testing. Install the browser once with npx playwright in
 
 - src/app/(site)/[locale]: website routes with a locale root layout
 - src/app/(payload): Payload admin and REST routes with Payload's own root layout
-- src/payload.config.ts: localized collections, private submissions and SQLite
+- src/payload.config.ts: localized collections, private submissions and MongoDB
 - src/actions/bookings.ts: validated server-side writes
 - src/components: responsive shell, filters and forms
 - scripts/seed.ts: idempotent multilingual CMS seed
