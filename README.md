@@ -28,7 +28,7 @@ Run npm run seed after updating an existing checkout. It only fills missing loca
 
 ## Rendering routes
 
-Explore /workshops and /studio for request-rendered CMS content, /guide for a build-time generated page, and /planner for a client-only planner body. Each page includes an expandable rendering note. On /planner the global language selector changes preloaded messages in memory and preserves the plan without a server navigation. Other pages use App Router navigation for their translated server/prebuilt content. All visible URLs remain unprefixed by default. See docs/rendering-modes.md.
+Explore /workshops and /studio for request-rendered CMS content, /guide for a build-time generated page, and /planner for a client-only planner body. Each page includes an expandable rendering note. On /planner the global language selector changes preloaded messages in memory and preserves the plan without a server navigation. Other pages use App Router navigation for their translated server/prebuilt content. All visible URLs remain unprefixed by default.
 
 ## Try the translations
 
@@ -54,7 +54,7 @@ UI translations live in src/messages. Editorial translations live in Payload's W
 - npm run build
 - npm run test:e2e (against a running app; defaults to port 3215, or set TEST_BASE_URL)
 
-Run npm run seed before testing. Install the browser once with npx playwright install chromium. The test runner creates a temporary CMS account, verifies real saved records and removes its own account and submissions. See docs/dependency-audit.md for checked versions and compatibility decisions.
+Run npm run seed before testing. Install the browser once with npx playwright install chromium. The test runner creates a temporary CMS account, verifies real saved records and removes its own account and submissions.
 
 ## Structure
 

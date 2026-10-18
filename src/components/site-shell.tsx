@@ -102,7 +102,7 @@ export function SiteHeader() {
     </>
   );
 }
-// Unsplash photographers of the images in public/images; see docs/photo-credits.md.
+// Unsplash photographers of the images in public/images.
 const photographers: Record<string, string> = {
   "Jonathan Cosens Photography": "https://unsplash.com/@jcosens",
   "Emily Underworld": "https://unsplash.com/@emilyunderworld",

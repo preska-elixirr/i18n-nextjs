@@ -39,3 +39,6 @@ Thumbs.db
 /.article-backups/
 
 /.local-backups/
+
+# Internal project notes, kept local only
+/docs/
